@@ -39,7 +39,10 @@ class DeliveryDetailLine(models.Model):
         'delivery.detail',
     )
     qty = fields.Float(
+        string='Cantidad',
+        help="Cantidad de producto en este detalle de entrega.",
     )
     uom_id = fields.Many2one(
         'uom.uom',
+        string='Unidad de Medida',
     )

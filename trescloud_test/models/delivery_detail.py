@@ -14,6 +14,7 @@ class DeliveryDetail(models.Model):
     # ------------------------------------------------------
     # CRUD METHODS
     # ------------------------------------------------------
+    # @api.model_create_multi
 
     # ------------------------------------------------------
     # COMPUTE METHODS
@@ -37,17 +38,19 @@ class DeliveryDetail(models.Model):
 
     account_move_id = fields.Many2one(
         'account.move',
+        string='Factura',
+        help="Factura asociada a este detalle de entrega."
     )
     picking_id = fields.Many2one(
         'stock.picking',
+        string='Transferencia',
+        help="Transferencia asociada a este detalle de entrega."
     )
-
     invoiced = fields.Boolean(
         string='Facturado',
         default=False,
         help="Indica si el detalle de la orden ha sido facturado por completo."
     )
-
     delivery_detail_line_ids = fields.One2many(
         'delivery.detail.line',
         'delivery_detail_id',

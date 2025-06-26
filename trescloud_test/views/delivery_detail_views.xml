@@ -6,7 +6,7 @@
         <field name="model">delivery.detail</field>
         <field name="arch" type="xml">
             <list string="Detalles de Entrega">
-                <field name="picking_id"/>
+                <field name="picking_id" string="Traslado"/>
                 <field name="invoiced"/>
             </list>
         </field>
@@ -17,20 +17,19 @@
         <field name="model">delivery.detail</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <group>
-                        <field name="picking_id"/>
-                    </group>
-                    <group>
-                        <field name="invoiced"/>
-                    </group>
-                </header>
                 <sheet>
+                    <group>
+                        <field name="picking_id" string="Transferencia" readonly="True"/>
+                    </group>
+                    <group>
+                        <field name="invoiced"
+                               modifiers="{'readonly': [('user_has_group', '!=', 'group_delivery_detail_administrator')]}"/>
+                    </group>
                     <group>
                         <field name="delivery_detail_line_ids" mode="list">
                             <list create="false">
-                                <field name="qty"/>
-                                <field name="uom_id"/>
+                                <field name="qty" readonly="True"/>
+                                <field name="uom_id" readonly="True"/>
                             </list>
                         </field>
                     </group>

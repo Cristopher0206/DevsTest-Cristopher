@@ -17,7 +17,9 @@
                         type="object"
                         class="oe_stat_button"
                         icon="fa-truck"
-                        string="Detalle de la Entrega">
+                        string="Detalle de la Entrega"
+                        invisible="state != 'posted'"
+                >
                 </button>
             </xpath>
         </field>
