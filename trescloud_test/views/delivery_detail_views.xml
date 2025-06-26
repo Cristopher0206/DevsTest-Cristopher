@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="" model="ir.ui.view">
-        <field name="name"></field>
-        <field name="model">delivery.detail</field>
-
-        <field name="arch" type="xml">
-
-        </field>
-    </record>
-
-    <record id="" model="ir.ui.view">
-        <field name="name"></field>
+    <record id="view_delivery_detail_list" model="ir.ui.view">
+        <field name="name">delivery.detail.list</field>
         <field name="model">delivery.detail</field>
         <field name="arch" type="xml">
-
+            <list string="Detalles de Entrega">
+                <field name="picking_id"/>
+                <field name="invoiced"/>
+            </list>
         </field>
     </record>
 
-    <record id="" model="ir.actions.server">
-		<field name="name"></field>
-		<field name="state">code</field>
-		<field name="type">ir.actions.server</field>
-		<field name="model_id" ref=""/>
-		<field name="binding_model_id" ref=""/>
-		<field name="binding_view_types"></field>
-		<field name="code">
-
+    <record id="view_delivery_detail_form" model="ir.ui.view">
+        <field name="name">Detalle de entrega</field>
+        <field name="model">delivery.detail</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <group>
+                        <field name="picking_id"/>
+                    </group>
+                    <group>
+                        <field name="invoiced"/>
+                    </group>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="delivery_detail_line_ids" mode="list">
+                            <list create="false">
+                                <field name="qty"/>
+                                <field name="uom_id"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
+
+    <!--record id="" model="ir.actions.server">
+        <field name="name"></field>
+        <field name="state">code</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref=""/>
+        <field name="binding_model_id" ref=""/>
+        <field name="binding_view_types"></field>
+        <field name="code">
+
+        </field>
+    </record-->
 </odoo>
