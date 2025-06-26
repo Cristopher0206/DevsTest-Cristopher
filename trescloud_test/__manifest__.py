@@ -1,32 +1,16 @@
-# -*- encoding:utf-8 -*-
 {
-    'name': 'Módulo para realizar modificaciones para la prueba de desarrolladores',
+    'name': 'Test',
     'version': '1.0',
-    'category': 'Accounting',
-    'description': '''
-        Este módulo contiene personalizaciones de acuerdo a las necesidades del cliente.
-
-        Autores:
-            -Cristopher Pérez
-    ''',
-    'author': 'TRESCLOUD',
-    'maintainer': 'TRESCLOUD',
-    'website': 'https://www.trescloud.com',
-    'summary': 'Módulo para realizar modificaciones para la prueba de desarrolladores',
-    'license': 'OEEL-1',
+    'category': 'Test',
+    'sequence': 15,
+    'summary': 'Test Module',
+    'website': 'trescloud.com',
     'depends': [
-
     ],
     'data': [
-        # data
-        # security
-        # reports
-        # wizard
-        # views
     ],
-    "assets": {
-    },
-    'application': True,
     'installable': True,
-    'auto_install': False,
+    'application': True,
+    'auto_install': True,
+    'license': 'LGPL-3',
 }
